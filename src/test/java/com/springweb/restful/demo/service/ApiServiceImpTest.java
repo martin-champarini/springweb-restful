@@ -27,7 +27,7 @@ public class ApiServiceImpTest {
     public void getUsers() {
 
         List<Datum> datumList= apiServiceImp.getUsers(3);
-
+        assertEquals(datumList.get(0).getGender(), "female");
         assertEquals(4, datumList.size());
     }
 }
