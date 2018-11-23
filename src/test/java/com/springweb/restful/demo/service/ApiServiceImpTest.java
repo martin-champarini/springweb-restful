@@ -27,7 +27,7 @@ public class ApiServiceImpTest {
     public void getUsers() {
 
         List<Datum> datumList= apiServiceImp.getUsers(3);
-
+        assertNotNull(datumList);
         assertEquals(4, datumList.size());
     }
 }
