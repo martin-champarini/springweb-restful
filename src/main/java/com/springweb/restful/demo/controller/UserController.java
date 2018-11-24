@@ -1,7 +1,7 @@
 package com.springweb.restful.demo.controller;
 
 
-import com.springweb.restful.demo.model.Datum;
+import com.springweb.restful.demo.model.user.Datum;
 import com.springweb.restful.demo.service.ApiServiceImp;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;

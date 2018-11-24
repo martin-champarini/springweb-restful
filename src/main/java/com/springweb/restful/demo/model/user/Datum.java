@@ -1,5 +1,5 @@
 
-package com.springweb.restful.demo.model;
+package com.springweb.restful.demo.model.user;
 
 
 import java.io.Serializable;

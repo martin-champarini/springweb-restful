@@ -1,8 +1,6 @@
 package com.springweb.restful.demo.service;
 
-import com.springweb.restful.demo.model.Datum;
-import com.springweb.restful.demo.model.User;
-import org.springframework.stereotype.Service;
+import com.springweb.restful.demo.model.user.Datum;
 
 import java.util.List;
 

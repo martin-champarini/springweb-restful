@@ -1,6 +1,6 @@
 package com.springweb.restful.demo.service;
 
-import com.springweb.restful.demo.model.Datum;
+import com.springweb.restful.demo.model.user.Datum;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -27,7 +27,6 @@ public class ApiServiceImpTest {
     public void getUsers() {
 
         List<Datum> datumList= apiServiceImp.getUsers(3);
-        assertEquals(datumList.get(0).getGender(), "female");
         assertEquals(4, datumList.size());
     }
 }

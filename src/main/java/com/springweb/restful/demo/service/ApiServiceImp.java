@@ -1,7 +1,7 @@
 package com.springweb.restful.demo.service;
 
-import com.springweb.restful.demo.model.Datum;
-import com.springweb.restful.demo.model.User;
+import com.springweb.restful.demo.model.user.Datum;
+import com.springweb.restful.demo.model.user.User;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
