@@ -18,27 +18,18 @@ public class ProductService {
     private final ObjectMapper mapper = new ObjectMapper();
 
     /*Return a field if exists, if not exists throw a message*/
-    public String getUpdateBy(Product object) {
-        Optional<Product> productOptional = Optional.of(object);
-        return productOptional
-                .map(Product::getInfo)
-                .map(info -> info.get().getUpdateBy())
-                .orElse("field missing");
+    public String getUpdateBy(Product product) {
+
+        return productUtils.getUpdateBy(product);
+
     }
 
     /*return a object if exists if not exist throw emptyo object*/
     public SubType_ getLastSubType(Product product) throws Exception {
-        Optional<Product> productOptional = Optional.of(product);
-
-        return productOptional
-                .map(Product::getResource)
-                .map(resource -> resource.get().getSubType())
-                .map(subType -> subType.get().getSubType())
-                .map(Optional::get)
-                .orElseGet(SubType_::new)
-                ;
+        return productUtils.getLastSubType(product);
     }
 
+    /*return an string using registerModuce to include Optional fields on Pojos, also use without registerModule but not Optional*/
     public String processJson(String json) throws IOException {
         mapper.registerModule(new Jdk8Module());
         //com.springweb.restful.demo.model.product.Product product = mapper.readValue(json, com.springweb.restful.demo.model.product.Product.class);
