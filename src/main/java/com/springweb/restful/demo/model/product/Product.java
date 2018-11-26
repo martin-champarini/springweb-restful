@@ -2,8 +2,7 @@
 package com.springweb.restful.demo.model.product;
 
 import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.StringJoiner;
 
 public class Product implements Serializable
 {
@@ -14,7 +13,6 @@ public class Product implements Serializable
     private String status;
     private Resource resource;
     private Info info;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
     private final static long serialVersionUID = 655806359845066882L;
 
     public Integer getId() {
@@ -65,12 +63,15 @@ public class Product implements Serializable
         this.info = info;
     }
 
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
+    @Override
+    public String toString() {
+        return new StringJoiner(", ", Product.class.getSimpleName() + "[", "]")
+                .add("id=" + id)
+                .add("uuid='" + uuid + "'")
+                .add("tag='" + tag + "'")
+                .add("status='" + status + "'")
+                .add("resource=" + resource)
+                .add("info=" + info)
+                .toString();
     }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
-
 }

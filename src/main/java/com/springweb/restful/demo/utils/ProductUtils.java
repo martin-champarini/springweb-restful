@@ -1,16 +1,13 @@
-package com.springweb.restful.demo.service;
+package com.springweb.restful.demo.utils;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.springweb.restful.demo.model.product.optional.Product;
 import com.springweb.restful.demo.model.product.optional.SubType_;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-import java.io.IOException;
 import java.util.Optional;
 
-@Service
-public class ProductService {
-    private final ObjectMapper mapper = new ObjectMapper();
+@Component
+public class ProductUtils {
 
     /*Return a field if exists, if not exists throw a message*/
     public String getUpdateBy(Product object) {
@@ -33,11 +30,4 @@ public class ProductService {
                 .orElseGet(SubType_::new)
                 ;
     }
-
-    public String processJson(String json) throws IOException {
-        com.springweb.restful.demo.model.product.Product product = mapper.readValue(json, com.springweb.restful.demo.model.product.Product.class);
-
-        return product.toString();
-    }
-
 }
