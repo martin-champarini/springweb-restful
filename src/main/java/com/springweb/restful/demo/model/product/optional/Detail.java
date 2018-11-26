@@ -4,6 +4,7 @@ package com.springweb.restful.demo.model.product.optional;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.StringJoiner;
 
 public class Detail implements Serializable
 {
@@ -37,4 +38,12 @@ public class Detail implements Serializable
         this.additionalProperties.put(name, value);
     }
 
+    @Override
+    public String toString() {
+        return new StringJoiner(", ", Detail.class.getSimpleName() + "[", "]")
+                .add("price='" + price + "'")
+                .add("limit=" + limit)
+                .add("additionalProperties=" + additionalProperties)
+                .toString();
+    }
 }

@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
+import java.util.StringJoiner;
 
 public class SubType implements Serializable
 {
@@ -47,4 +48,13 @@ public class SubType implements Serializable
         this.additionalProperties.put(name, value);
     }
 
+    @Override
+    public String toString() {
+        return new StringJoiner(", ", SubType.class.getSimpleName() + "[", "]")
+                .add("id=" + id)
+                .add("type='" + type + "'")
+                .add("subType=" + subType)
+                .add("additionalProperties=" + additionalProperties)
+                .toString();
+    }
 }

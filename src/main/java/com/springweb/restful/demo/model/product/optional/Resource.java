@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
+import java.util.StringJoiner;
 
 public class Resource implements Serializable
 {
@@ -56,4 +57,14 @@ public class Resource implements Serializable
         this.additionalProperties.put(name, value);
     }
 
+    @Override
+    public String toString() {
+        return new StringJoiner(", ", Resource.class.getSimpleName() + "[", "]")
+                .add("id=" + id)
+                .add("type='" + type + "'")
+                .add("subType=" + subType)
+                .add("detail=" + detail)
+                .add("additionalProperties=" + additionalProperties)
+                .toString();
+    }
 }
