@@ -1,0 +1,50 @@
+
+package com.springweb.restful.demo.model.product.optional;
+
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
+
+public class SubType implements Serializable
+{
+
+    private Integer id;
+    private String type;
+    private Optional<SubType_> subType;
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    private final static long serialVersionUID = -2162499985942168514L;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public Optional<SubType_> getSubType() {
+        return subType;
+    }
+
+    public void setSubType(Optional<SubType_> subType) {
+        this.subType = subType;
+    }
+
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
+
+}

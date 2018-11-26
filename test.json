@@ -3,7 +3,7 @@
   "uuid": "1cb838fa-797d-4eb3-9bba-4848deacbdb0",
   "tag": "cloud",
   "status":"ACTIVE",
-  "product":
+  "resource":
   {
     "id": 1234,
     "type": "rds",
@@ -12,7 +12,7 @@
       "type":"cluster",
       "subType":{
         "id": 12908978,
-        "type":"instance",
+        "type":"instance"
       }
     },
     "detail":{

@@ -1,5 +1,5 @@
 
-package com.springweb.restful.demo.model.product;
+package com.springweb.restful.demo.model.product.optional;
 
 import java.io.Serializable;
 import java.util.StringJoiner;
