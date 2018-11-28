@@ -2,7 +2,14 @@ package com.springweb.restful.demo.config;
 
 
 import com.springweb.restful.demo.service.ProductJob;
-import org.quartz.*;
+
+import org.quartz.SchedulerException;
+import org.quartz.Trigger;
+import org.quartz.SimpleScheduleBuilder;
+import org.quartz.TriggerBuilder;
+import org.quartz.JobDetail;
+import org.quartz.JobDataMap;
+import org.quartz.JobBuilder;
 import org.springframework.beans.factory.config.PropertiesFactoryBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
